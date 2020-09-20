@@ -128,17 +128,15 @@ $mail->Body = mb_convert_encoding(
     $mail->send();
     
     try {
-//       $stmt =$pdo->prepare('INSERT INTO contact(corporate_name, name, telephone, email, contact_menu, contact, regist_date) VALUES(:CorporateName, :Name, :Telephone, :Email, :ContactMenu, :Contact, CURRENT_TIMESTAMP())');
-//       $stmt->bindValue(':CorporateName', $corporateName);
-//       $stmt->bindValue(':Name', $name);
-//       $stmt->bindValue(':Telephone', $telephone);
-//       $stmt->bindValue(':Email', $email);
-//       $stmt->bindValue(':ContactMenu', $menu);
-//       $stmt->bindValue(':Contact', $contact);
-      
-      $pdo->pg_query('INSERT INTO contact(corporate_name, name, telephone, email, contact_menu, contact, regist_date) VALUES('aaaa', 'aaaa', '1234', 'aaaa@aaaa', 'ssss', 'aaaa', CURRENT_TIMESTAMP())');
+      $stmt =$pdo->prepare('INSERT INTO contact(corporate_name, name, telephone, email, contact_menu, contact, regist_date) VALUES(:CorporateName, :Name, :Telephone, :Email, :ContactMenu, :Contact, CURRENT_TIMESTAMP())');
+      $stmt->bindValue(':CorporateName', $corporateName);
+      $stmt->bindValue(':Name', $name);
+      $stmt->bindValue(':Telephone', $telephone);
+      $stmt->bindValue(':Email', $email);
+      $stmt->bindValue(':ContactMenu', $menu);
+      $stmt->bindValue(':Contact', $contact);
     
-//       $stmt->execute();
+      $stmt->execute();
     }catch(PDOException $e) {
       header('Contact-Type: text/plain; charset=UTF-8', true,500);
       exit($e->getMessage());
