@@ -9,7 +9,7 @@
 // print("接続成功".'<br>');
 
 
-$dsn = 'pgsql:host=ec2-52-1-95-247.compute-1.amazonaws.com;port=5432;dbname=dbc3vqnkgkk489;charset=utf8';
+$dsn = 'pgsql:host=ec2-52-1-95-247.compute-1.amazonaws.com;port=5432;dbname=dbc3vqnkgkk489';
 $user = 'jwvivlcaqucweh';
 $pass = '8bafc8441900fc7cdff15349aa62d905003ccfe189fa02f9fdcfaa67fbb589f3';
 
