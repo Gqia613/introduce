@@ -1,0 +1,325 @@
+/* フォームのCSS */
+.contact_wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 0;
+  }
+  
+  .contact_wrap h2 {
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .form_ttl {
+    border-left: 8px solid #16a085;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding-left: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .send {
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  
+  .send li {
+    width: 33%;
+    background: #000;
+    padding: 1.7vw 0;
+    background: url('../images/contact_dco.png') no-repeat top center / contain;
+    text-align: center;
+  }
+  
+  .send .color {
+    background: url('../images/contact_dco02.png') no-repeat top center / contain;
+  }
+  
+  .inputs {
+    height: 30px;
+    max-width: 300px;
+    width: 100%;
+  }
+  
+  .cmn_contact_btn {
+    width: 120px;
+    margin: 0 auto;
+    padding: 10px 0;
+    background: #effcf9;
+    border: solid 3px #effcf9;
+    cursor: pointer;
+    transition: 0.25s;
+    text-align: center;
+  }
+  
+  .cmn_contact_btn:hover {
+    background: #fff;
+  }
+  
+  @media screen and (max-width:767px) {
+    .contact_wrap h2 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .form_ttl {
+      border-left: 4px solid #16a085;
+      font-size: 2rem;
+      font-weight: bold;
+      padding-left: 8px;
+      margin-bottom: 30px;
+    }
+  
+    .cmn_contact_btn {
+      width: 100px;
+      font-size: 1.4rem;
+      padding: 5px 0;
+    }
+  
+    .send {
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+  
+    .send li {
+      width: 33%;
+    }
+  }
+  
+  
+  /* ーーーーー共通 */
+  
+  
+  
+  /* #form */
+  
+  #form .form_wrap {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  #form .from_inner {
+    position: relative;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    width: 70%;
+  }
+  
+  
+  #form .item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    height: 130px;
+    margin-top: -1px;
+  }
+  
+  .item textarea {
+    height: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  #form .item:nth-of-type(6) {
+    height: 225px;
+  }
+  
+  #form .item:nth-of-type(6) .label {
+    display: flex;
+    align-items: center;
+  }
+  
+  #form .erro {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: red;
+  }
+  
+  
+  #form .contact_from .label {
+    width: 200px;
+    margin-right: 20px;
+    padding: 30px 10px 30px 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: #effcf9;
+    border-right: solid 1px #000;
+  }
+  
+  #form .impot {
+    color: #fff;
+    background: red;
+    padding: 3px 5px;
+    font-size: 1rem;
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  #form .btn-area {
+    text-align: center;
+  }
+  
+  #form .btn-area {
+    margin-top: 40px;
+  }
+  
+  .recruit {
+    margin-bottom: 30px;
+  }
+  
+  
+  @media screen and (max-width:767px) {
+    #form .contact_from .label {
+      width: 100%;
+      margin-right: 0;
+      padding: 10px 20px;
+      height: 50px;
+      font-size: 1.5rem;
+      border-right: none;
+    }
+  
+    #form .item {
+      display: block;
+      border: none;
+      margin-top: 0;
+      height: auto;
+    }
+  
+    #form .from_inner {
+      padding: 10px 20px;
+      width: 100%;
+    }
+  
+    #form .from_inner {
+      height: 85%;
+    }
+  
+    #form .erro {
+      position: absolute;
+      top: -17px;
+      left: 20px;
+      color: red;
+    }
+  }
+  
+  /* #form */
+  
+  
+  /* ------------------------------------------- */
+  
+  
+  /* confirm */
+  
+  #confim .confim_ttl {
+    text-align: center;
+  }
+  
+  .data {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  
+  .data_list {
+    justify-content: flex-start;
+    border: solid 1px #000;
+  }
+  
+  .data_list:not(:first-child) {
+    margin-top: -1px;
+  }
+  
+  .data_list dt {
+    width: 200px;
+    padding: 20px;
+    background: #effcf9;
+    border-right: solid 1px #000;
+  }
+  
+  .data_list dd {
+    padding-left: 20px;
+    width: 70%;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .data_text {
+    word-break: break-word;
+    line-height: 1.6;
+  }
+  
+  .data_list input,
+  .data_list textarea {
+    border: none;
+    pointer-events: none;
+    resize: none;
+  }
+  
+  .data_btn {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .contact_wrap span {
+    display: block;
+    font-size: 2rem;
+  }
+  
+  @media screen and (max-width:767px) {
+    .data_list dt {
+      width: 100%;
+      padding: 10px;
+      border-right: none;
+    }
+  
+    .data_list {
+      border: none;
+      font-size: 1.5rem;
+    }
+  
+    .data_list dd {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .data_btn {
+      max-width: 250px;
+    }
+  }
+  
+  
+  
+  /* complete */
+  #complete .complete_ttl {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  #complete .send {
+    margin-bottom: 70px;
+  }
+  
+  .contact_text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+  
+  
+  @media screen and (max-width:767px) {
+    #complete .send {
+      margin-bottom: 30px;
+    }
+  }
+  

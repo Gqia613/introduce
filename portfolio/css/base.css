@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
+
+body {
+	font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: 'Noto Serif JP';
+}
+
+@media screen and (min-width: 768px) {
+	body {
+		width: 100%;
+		min-width: 1280px;
+		margin: 0 auto;
+		font-size: 1.6rem;
+	}
+
+	a[href^="tel:"] {
+		pointer-events: none;
+	}
+
+	[class*="wrap"] {
+		width: 1080px;
+		margin: 0 auto;
+	}
+
+	.sp_h_gnav {
+		display: none;
+	}
+}
+
+
+
+
+
+@media screen and (max-width:767px) {
+	[class*="wrap"] {
+		width: calc(100% - 25px);
+		margin: 0 auto;
+	}
+
+	.h_gnav {
+		display: none;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.pc {
+		display: none !important;
+	}
+}
+
+
+
+#slider li,
+.slider li {
+	outline: none;
+}
+
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+}

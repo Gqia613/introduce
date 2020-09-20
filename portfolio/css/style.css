@@ -1,0 +1,978 @@
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/NotoSansCJKjp-Regular.woff") format('woff');
+}
+
+body {
+  font-size: 62.5%;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+#lightboxOverlay {
+  outline: none;
+}
+
+.shdow {
+  position: fixed;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝ここからヘッダー＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 100%;
+  font-family: 'Noto Sans Japanese',
+    "游明朝体",
+    "Yu Mincho";
+}
+
+.top {
+  transition: 0.3s;
+}
+
+.button,
+.button span {
+  position: relative;
+  display: inline-block;
+}
+
+.button span {
+  animation: 3s float ease-in-out infinite;
+}
+
+.button::after {
+  position: absolute;
+  bottom: -13px;
+  left: 50%;
+  z-index: -1;
+  content: '';
+  width: 100%;
+  height: 14px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 15px -10px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  transform: translateX(-50%);
+  animation: 3s shadow ease-in-out infinite;
+  animation: 3s shadow ease-in-out infinite;
+}
+
+@-webkit-keyframes float {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@-webkit-keyframes shadow {
+  50% {
+    width: 70%;
+    height: 18px;
+  }
+}
+
+@keyframes shadow {
+  50% {
+    width: 70%;
+    height: 18px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0;
+}
+
+.header_ttl {
+  font-size: 3rem;
+}
+
+.header_ttl:hover {
+  transition: 0.2s;
+}
+
+.header_ttl a:hover {
+  opacity: 0.7;
+}
+
+.header_content_text {
+  font-size: 0.1rem;
+  text-align: right;
+}
+
+.header_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_content_tll {
+  margin: 10px 0 0;
+}
+
+.header_content_tll span {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.header_content_contact {
+  margin-left: 30px;
+}
+
+.header_content_contact a:hover {
+  opacity: 0.7;
+}
+
+/* ナヴィゲーション */
+.g_nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 700px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.g_nav li {
+  flex-grow: 1;
+}
+
+/* .g_nav span {
+  display: block;
+  margin-top: 10px;
+} */
+
+.g_nav a {
+  display: inline-block;
+  padding: 16px 0;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+
+.g_nav a span {
+  display: inline-block;
+  position: relative;
+  padding: 0.3em;
+  transition: .4s;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.g_nav a span:after {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: attr(data-text);
+  padding: 0 .3em;
+  color: #fff;
+  /* background-color: #333; */
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform: translate3d(0, 105%, 0) rotateX(-90deg);
+  transform: translate3d(0, 105%, 0) rotateX(-90deg);
+}
+
+
+
+.g_nav a:hover span {
+  color: transparent;
+  -webkit-transform: translate3d(0, 0, -30px) rotateX(90deg);
+  transform: translate3d(0, 0, -30px) rotateX(90deg);
+}
+
+
+
+/* spナヴィゲーション */
+@media screen and (max-width:767px) {
+  header {
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+  }
+
+  .header h1 {
+    display: none;
+  }
+
+  .sp_menu {
+    z-index: 5;
+    width: 43px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .g_nav {
+    display: none;
+  }
+
+  .sp_h_gnav {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background: #fff;
+  }
+
+  .sp_gnav_inner {
+    height: 100%;
+    padding: 0 20px;
+    align-items: center;
+  }
+
+  .h_gnav_list {
+    width: 35vw;
+  }
+
+  .catch {
+    height: 100%;
+    margin: 60px 0 0;
+  }
+
+  .slide-item {
+    height: 200px;
+  }
+
+  .catch_ttl {
+    position: absolute;
+    width: 100%;
+  }
+
+  .sp_h_gnav span {
+    border-bottom: solid 3px #000;
+    width: 30px;
+    transition: all .4s;
+  }
+
+  .sp_gnav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 70%;
+    height: 100vh;
+    padding: 0 0 40%;
+    overflow-y: scroll;
+    transform: translateX(-100%);
+    transition: all .4s;
+  }
+
+  .open {
+    transform: translateX(0);
+  }
+
+  /* ハンバーガーメニューfadeInの時に表示 */
+
+
+  .sp_gnav_list li {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    font-size: 1.6rem;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .sp_gnav_list a {
+    padding: 15px 30px 15px 0;
+    text-align: right;
+    font-size: 1.5rem;
+  }
+
+  .sp_h_gnav .menu_btn:first-of-type {
+    transform: rotate(-315deg) translateY(6px) translateX(9px);
+    right: 20px;
+  }
+
+  .sp_h_gnav .menu_btn:nth-of-type(2) {
+    transform: translateX(0);
+    opacity: 0;
+  }
+
+  .sp_h_gnav .menu_btn:last-of-type {
+    transform: rotate(315deg) translateY(-4px) translateX(6px);
+  }
+
+  .sp_adrress {
+    padding: 20px 0;
+  }
+
+  .sp_adrress a {
+    padding: 5px 30px;
+    font-size: 1.8rem;
+  }
+}
+
+/* ▲＝＝＝＝＝＝＝＝＝＝＝＝＝ここまでヘッダー＝＝＝＝＝＝＝＝＝＝＝ ▲*/
+
+
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝ここからメイン＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+.catch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+  position: relative;
+}
+
+.catch h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  font-family: 'Noto Sans Japanese',
+    "游明朝体",
+    "Yu Mincho";
+  font-size: 5rem;
+  line-height: 1.8;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 0 10px,
+    rgba(255, 255, 255, 0.8) 1px 0 10px,
+    rgba(255, 255, 255, 0.8) 1px 0 10px,
+    rgba(255, 255, 255, 0.8) 1px 0 10px,
+    rgba(255, 255, 255, 0.8) 1px 0 10px,
+    rgba(255, 255, 255, 0.8) 1px 0 10px;
+}
+
+.catch h2 span {
+  font-size: 7.5rem;
+}
+
+.slide-item {
+  height: 700px;
+  object-fit: cover;
+}
+
+.slide-item img {
+  width: 100%;
+}
+
+.slide-inner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-family: 'object-fit: cover';
+}
+
+
+#slider {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width:768px) {
+  .catch_ttl {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .sp_catch_ttl {
+    display: none;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .catch {
+    height: 100%;
+    margin: 60px 0 0;
+  }
+
+  .catch h2 {
+    font-size: 2.5rem;
+    width: 300px;
+  }
+
+  .catch h2 span {
+    font-size: 3.5rem;
+  }
+
+  .catch_ttl {
+    width: 50%;
+  }
+
+  .slide-item {
+    height: 200px;
+  }
+}
+
+
+
+
+
+
+/* concept */
+
+.concept {
+  padding-bottom: 140px;
+}
+
+.concept_wrap {
+  text-align: center;
+}
+
+.concept_ttl {
+  margin-bottom: 40px;
+  font-family: 'Noto Sans Japanese',
+    "游明朝体",
+    "Yu Mincho";
+  font-size: 2.5rem;
+}
+
+.concept_ttl span {
+  color: rgb(93, 172, 129);
+  font-size: 3.5rem;
+}
+
+.concept_text {
+  font-size: 1.6rem;
+  line-height: 2;
+  letter-spacing: 0.08em;
+}
+
+
+@media screen and (max-width:767px) {
+  .concept {
+    padding-bottom: 100px;
+  }
+
+  .concept_ttl {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .concept_ttl span {
+    font-size: 3rem;
+  }
+
+  .concept_text {
+    font-size: 1.4rem;
+    letter-spacing: 0;
+    line-height: 1.6;
+  }
+}
+
+
+
+
+.service {
+  background: rgba(31, 215, 228, 0.04);
+}
+
+.svc_list {
+  margin-bottom: 100px;
+}
+
+.svc_list li {
+  width: 33%;
+  padding: 20px 40px;
+}
+
+.svc_ttl {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.svc_text {
+  line-height: 1.8;
+}
+
+
+
+.svc_img {
+  max-width: 200px;
+  width: 100%;
+  height: 200px;
+  margin: 0 auto 25px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.svc_img img {
+  width: 70%;
+}
+
+.question {
+  margin-bottom: 50px;
+}
+
+.question_ttl {
+  font-size: 3rem;
+  font-family: 'Noto Sans Japanese',
+    "游明朝体",
+    "Yu Mincho";
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.data {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto 25px;
+}
+
+.data dt {
+  padding: 10px 20px;
+  border-left: solid 6px rgba(31, 215, 228, 0.5);
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.data dt:hover {
+  background: rgba(31, 215, 228, 0.3);
+}
+
+.data dd {
+  display: none;
+  padding: 20px 30px;
+  background: #fff;
+  margin-left: 6px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+.svc_contact {
+  text-align: center;
+}
+
+.svc_contact p:nth-of-type(1) {
+  margin-bottom: 20px;
+}
+
+.svc_btn a {
+  font-size: 1.8rem;
+  color: #fff;
+  padding: 13px 0;
+  max-width: 160px;
+  width: 100%;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  background: rgba(31, 215, 228, 0.3);
+  transition: 0.5s;
+}
+
+
+
+.svc_btn a:hover {
+  background: transparent;
+  color: rgba(31, 215, 228, 0.4);
+}
+
+.svc_btn a:before,
+.svc_btn a:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: rgba(31, 215, 228, 0.4);
+  transition: 400ms ease all;
+}
+
+.svc_btn a:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.svc_btn a:hover:before,
+.svc_btn a:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
+
+@media screen and (max-width:767px) {
+  .svc_list {
+    display: block;
+    margin-bottom: 25px;
+  }
+
+  .svc_list li {
+    width: 100%;
+  }
+
+  .data {
+    width: 85%;
+  }
+
+  .data dt {
+    font-size: 1.5rem;
+  }
+
+  .data dd {
+    padding: 15px 20px;
+    font-size: 1.4rem;
+  }
+
+  .question_ttl {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+  }
+}
+
+
+
+
+/* .portfolio */
+.profile {
+  background: url('../images/pf_bg.png') no-repeat top center / cover;
+}
+
+.port_list {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.port_list li {
+  margin: 0 10px;
+  width: 40%;
+}
+
+.port_list li:nth-child(n+3) {
+  margin-top: 50px;
+}
+
+.port_img {
+  overflow: hidden;
+}
+
+.port_list a {
+  height: 300px;
+  width: 100%;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+.port_list li:nth-of-type(1) a {
+  background: url('../images/port_01.png') no-repeat top center / 100%;
+}
+
+.port_list li:nth-of-type(2) a {
+  background: url('../images/port_02.png') no-repeat top center / 100%;
+}
+
+.port_list li:nth-of-type(3) a {
+  background: url('../images/port_03.png') no-repeat top center / 100%;
+}
+
+.port_list li:nth-of-type(4) a {
+  background: url('../images/port_04.png') no-repeat top center / 100%;
+}
+
+.port_list a:hover {
+  transform: scale(1.2);
+}
+
+.port_text {
+  background: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-family: 'Noto Sans Japanese',
+    "游明朝体",
+    "Yu Mincho";
+}
+
+.port_text span {
+  padding: 90px 60px;
+  border: solid 1px #444;
+  color: #000;
+  position: relative;
+}
+
+#lightbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.lb-outerContainer {
+  order: 2;
+}
+
+
+@media screen and (max-width:767px) {
+  .port_list a {
+    height: auto;
+  }
+
+  .port_list a:hover {
+    transform: scale(1);
+  }
+
+  .port_text {
+    font-size: 1.8rem;
+    padding: 10px 0;
+  }
+
+  .port_text span {
+    padding: 13vw 3vw;
+  }
+
+  .pf_text {
+    line-height: 1.4;
+  }
+}
+
+
+
+/* profile */
+
+.profile {
+  background: url('../images/pf_bg.png') no-repeat top center / cover;
+}
+
+.pf_content {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pf_content p {
+  line-height: 1.8;
+  font-weight: 700;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 0 10px,
+    rgba(255, 255, 255, 0.8) 1px 0 10px,
+    rgba(255, 255, 255, 0.8) 1px 0 10px,
+    rgba(255, 255, 255, 0.8) 1px 0 10px,
+    rgba(255, 255, 255, 0.8) 1px 0 10px;
+}
+
+.pf_list li {
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  width: 47%;
+}
+
+.pf_img {
+  max-width: 300px;
+  width: 100%;
+  height: 300px;
+  margin: 0 auto 20px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.pf_img img {
+  width: 100%;
+}
+
+
+.pf_name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.pf_name span {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.pf_text {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  letter-spacing: 0.06em;
+  min-height: 120px;
+}
+
+.pf_text a {
+  color: rgb(21, 60, 218);
+  display: inline;
+  text-decoration: underline;
+}
+
+.pf_text a:hover {
+  opacity: 0.6;
+}
+
+
+.sns {
+  justify-content: center;
+}
+
+.sns p {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 10px;
+  transition: all 0.5s;
+  /* box-shadow: 0 0 2px 0 rgba(0, 0, 0, 1); */
+}
+
+.sns img {
+  width: 100%;
+}
+
+.sns a {
+  transition: all 0.3s;
+}
+
+.sns p:hover {
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.7);
+  transform: translateY(-15px);
+}
+
+
+@media screen and (max-width:767px) {
+  .pf_content {
+    margin-bottom: 0;
+  }
+
+  .pf_content p {
+    font-size: 1.4rem;
+  }
+
+  .pf_list {
+    display: block;
+  }
+
+  .pf_list li {
+    width: 100%;
+  }
+
+  .pf_img {
+    max-width: 200px;
+    height: 200px;
+  }
+
+  .pf_text {
+    min-height: auto;
+  }
+
+  .sns p {
+    height: 65px;
+    width: 65px;
+  }
+}
+
+
+/* ＝＝＝＝＝＝＝＝＝＝＝ここからメインまで＝＝＝＝＝＝＝＝＝＝＝＝ */
+
+.return p {
+  width: 30px;
+  height: 30px;
+  border-top: solid 2px #000;
+  border-right: solid 2px #000;
+  transform: rotate(-45deg);
+  right: 70px;
+  bottom: 150px;
+  cursor: pointer;
+  z-index: 2;
+  position: fixed;
+  transition: 0.25s;
+}
+
+.return span {
+  width: 2px;
+  height: 50px;
+  background: #000;
+  transform: rotate(45deg);
+  display: block;
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  transform: rotate(45deg);
+}
+
+.return p:hover {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+@media screen and (max-width:767px) {
+  .return {
+    display: none !important;
+  }
+}
+
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝ここからフッター＝＝＝＝＝＝＝＝＝＝＝*/
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+}
+
+
+#copy {
+  display: block;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#copy a {
+  display: inline;
+  transition: 0.25s;
+}
+
+
+#copy a:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width:767px) {
+  footer {
+    padding: 20px 0;
+    margin-top: 20px;
+  }
+
+  #copy {
+    font-size: 0.7rem;
+  }
+}
+
+/* ▲＝＝＝＝＝＝＝＝＝＝＝＝＝ここまでフッター＝＝＝＝＝＝＝＝＝＝ ▲*/
