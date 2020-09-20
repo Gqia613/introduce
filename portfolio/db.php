@@ -1,7 +1,10 @@
 <?php
+$DBHOST = "ec2-52-1-95-247.compute-1.amazonaws.com";
+$DBPORT = "5432";
+$DBNAME = "dbc3vqnkgkk489";
+$DBUSER = "jwvivlcaqucweh";
+$DBPASS = "8bafc8441900fc7cdff15349aa62d905003ccfe189fa02f9fdcfaa67fbb589f3";
 
-$conn = "dbname=dbc3vqnkgkk489 host=ec2-52-1-95-247.compute-1.amazonaws.com port=5432 user=jwvivlcaqucweh password=8bafc8441900fc7cdff15349aa62d905003ccfe189fa02f9fdcfaa67fbb589f3 sslmode=require";
-$pdo = new PDO($conn,[
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-]);
+$dbh = new PDO("pgsql:host=$DBHOST;port=$DBPORT;dbname=$DBNAME;user=$DBUSER;password=$DBPASS");
+print("接続成功".'<br>');
 
