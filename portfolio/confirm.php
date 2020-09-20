@@ -136,7 +136,7 @@ $mail->Body = mb_convert_encoding(
 //       $stmt->bindValue(':ContactMenu', $menu);
 //       $stmt->bindValue(':Contact', $contact);
       
-      $pdo->execute('INSERT INTO contact(corporate_name, name, telephone, email, contact_menu, contact, regist_date) VALUES('aaaa', 'aaaa', '1234', 'aaaa@aaaa', 'ssss', 'aaaa', CURRENT_TIMESTAMP())');
+      $pdo->pg_query('INSERT INTO contact(corporate_name, name, telephone, email, contact_menu, contact, regist_date) VALUES('aaaa', 'aaaa', '1234', 'aaaa@aaaa', 'ssss', 'aaaa', CURRENT_TIMESTAMP())');
     
 //       $stmt->execute();
     }catch(PDOException $e) {
