@@ -128,7 +128,7 @@ $mail->Body = mb_convert_encoding(
     $mail->send();
     
     try {
-      $stmt =$pdo->prepare('INSERT INTO contact(corporate_name, name, telephone, email, contact_menu, contact, regist_date) VALUES(:CorporateName, :Name, :Telephone, :Email, :ContactMenu, :Contact, CURRENT_TIMESTAMP())');
+      $stmt =$pdo->prepare('INSERT INTO contact(corporate_name, name, telephone, email, contact_menu, contact, regist_date) VALUES(:CorporateName, :Name, :Telephone, :Email, :ContactMenu, :Contact, CURRENT_TIMESTAMP)');
       $stmt->bindValue(':CorporateName', $corporateName);
       $stmt->bindValue(':Name', $name);
       $stmt->bindValue(':Telephone', $telephone);
